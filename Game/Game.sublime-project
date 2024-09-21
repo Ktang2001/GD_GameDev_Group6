@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"name": "Game",
+			"path": "C:\\Users\\Kaleb\\Documents\\GitHub\\GD_GameDev_Group6/Game"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Flixel",
+			"path": "C:\\HaxeToolkit\\haxe\\lib\\flixel/5,8,0/"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Flixel Addons",
+			"path": "C:\\HaxeToolkit\\haxe\\lib\\flixel-addons/3,2,3/"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Haxe",
+			"path": "C:\\HaxeToolkit\\haxe/std"
+		}
+	]
+}
