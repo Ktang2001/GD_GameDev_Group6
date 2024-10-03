@@ -8,14 +8,15 @@ Name of the Game:
 */
 import flixel.FlxGame;
 import openfl.display.Sprite;
+import flixel.FlxState;
 
-class Main extends Sprite
+
+class Main extends FlxGame
 {
-	public function new()
-	{
-		super();
-		addChild(new FlxGame(0, 0, PlayState));
-	}
+    public function new()
+    {
+        super(800, 600, MenuState);
+    }
 }
 
 
