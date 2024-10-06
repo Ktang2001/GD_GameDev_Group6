@@ -1,10 +1,12 @@
 package;
 
+// Imports for the game logic to work 
+
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.group.FlxGroup;
 import flixel.FlxSprite;
-import flixel.util.FlxTimer; // Import FlxTimer
+import flixel.util.FlxTimer; 
 
 class PlayState extends FlxState
 {
@@ -12,6 +14,7 @@ class PlayState extends FlxState
     private var projectiles:FlxGroup;
     private var background:FlxSprite;
 
+    // Allows us to use the player initalized in the menustate 
     public function new(player:Player)
     {
         super();
@@ -55,6 +58,7 @@ class PlayState extends FlxState
         FlxG.overlap(player, projectiles, onCollision);
     }
 
+    // This fucniton will ransomly spaan projectiltes 
     private function spawnProjectile(timer:FlxTimer):Void
     {
         var projectile:Projectile = new Projectile(FlxG.width, FlxG.random.int(0, FlxG.height - 20), 10, 2); 
