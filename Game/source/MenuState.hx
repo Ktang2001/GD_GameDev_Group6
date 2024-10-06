@@ -99,10 +99,10 @@ class MenuState extends FlxState
 
     private function onStart():Void
     {
-        // Set the player's image to the selected character's image
+       
         player.setImage(characterImages[selectedCharacter].graphic.key);
 
-        // Start Game after selection of the Character Image
-        FlxG.switchState(new PlayState());
+        // Start Game after selection of the Character Image and makes sure to include the player with the image path chossen
+        FlxG.switchState(new PlayState(player));
     }
 }
