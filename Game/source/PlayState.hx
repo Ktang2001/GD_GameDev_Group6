@@ -1,20 +1,21 @@
 package;
 
-// Imports for the game logic to work 
-
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.group.FlxGroup;
 import flixel.FlxSprite;
-import flixel.util.FlxTimer; 
+import flixel.util.FlxTimer;
 
 class PlayState extends FlxState
 {
     private var player:Player;
     private var projectiles:FlxGroup;
     private var background:FlxSprite;
+    private var elapsedTime:Float = 0;
+    private var projectileSpeed:Float = -200; // Projectile Speed
 
-    // Allows us to use the player initalized in the menustate 
+
+    // This fucntion is ment to allow the player class initated in the menustate to transfer the play state.
     public function new(player:Player)
     {
         super();
@@ -30,22 +31,30 @@ class PlayState extends FlxState
         background.scrollFactor.set(0.5, 0.5);
         add(background);
 
-        // Add player
+        // Add player to the screen
         player.x = 50;
         player.y = FlxG.height / 2;
         add(player);
 
-        
         projectiles = new FlxGroup();
         add(projectiles);
 
-        // Spawn projectiles periodically using FlxTimer
-        new FlxTimer().start(1, spawnProjectile, 0); 
+        // Spawn projectiles
+        new FlxTimer().start(1, spawnProjectile, 0);
+
+        // Record the start time
+        elapsedTime = 0;
     }
 
     override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
+
+        // Update the elapsed time
+        elapsedTime += elapsed;
+
+        // Increase projectile speed over time
+        projectileSpeed -= elapsed * 10; 
 
         // Scroll the background
         background.x -= 1;
@@ -54,20 +63,22 @@ class PlayState extends FlxState
             background.x = 0;
         }
 
-        // Collision checks 
+        // Collision checks
         FlxG.overlap(player, projectiles, onCollision);
     }
 
-    // This fucniton will ransomly spaan projectiltes 
+
+    // The fucntion below randomly spwans projectiles for the player to avoid
     private function spawnProjectile(timer:FlxTimer):Void
     {
-        var projectile:Projectile = new Projectile(FlxG.width, FlxG.random.int(0, FlxG.height - 20), 10, 2); 
+        var projectile:Projectile = new Projectile(FlxG.width, FlxG.random.int(0, FlxG.height - 20), 10, 2);
+        projectile.velocity.x = projectileSpeed; 
         projectiles.add(projectile);
     }
 
-    private function onCollision(player:Player, projectile:Projectile):Void
+    private function onCollision(player:Player, obstacle:FlxSprite):Void
     {
-        // Handles loose state
-        FlxG.switchState(new MenuState());
+        // Switch to the lose state and pass the time survived to be displayed
+        FlxG.switchState(new LoseState(elapsedTime));
     }
 }

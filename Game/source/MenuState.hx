@@ -23,7 +23,7 @@ class MenuState extends FlxState
         background.scrollFactor.set(0.5, 0.5);
         add(background);
 
-        var titleLabel:FlxText = new FlxText(400, 0, FlxG.width, "Title"); // Sets the positon and string of the title so it at the center and top.
+        var titleLabel:FlxText = new FlxText(400, 0, FlxG.width, "Lost in Space"); // Sets the positon and string of the title so it at the center and top.
         titleLabel.setFormat(null, 20, 0x0000FF); // sets the title to the size of 20 and the color Blue
         add(titleLabel);
 

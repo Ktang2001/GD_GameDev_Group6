@@ -92,6 +92,7 @@ import sys.FileSystem;
 #if flash
 
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_data_goes_here_txt extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_astroidimage_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_background_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_ball_16_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_ball_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
