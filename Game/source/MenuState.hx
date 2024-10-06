@@ -23,7 +23,7 @@ class MenuState extends FlxState
         background.scrollFactor.set(0.5, 0.5);
         add(background);
 
-        var titleLabel:FlxText = new FlxText(400, 0, FlxG.width, "Lost in Space"); // Sets the positon and string of the title so it at the center and top.
+        var titleLabel:FlxText = new FlxText(350, 0, FlxG.width, "Lost in Space"); // Sets the positon and string of the title so it at the center and top.
         titleLabel.setFormat(null, 20, 0x0000FF); // sets the title to the size of 20 and the color Blue
         add(titleLabel);
 
@@ -32,8 +32,8 @@ class MenuState extends FlxState
         characterImages = [
             // the Paramerters that are modifable for these lines of code are  here are the x and y pos 
             new FlxSprite(100, 200, "assets/images/ball_2.png"), 
-            new FlxSprite(300, 200, "assets/images/ball_4.png"),
-            new FlxSprite(500, 200, "assets/images/ball_16.png")
+            new FlxSprite(400, 200, "assets/images/ball_4.png"),
+            new FlxSprite(700, 200, "assets/images/ball_16.png")
         ];
         for (character in characterImages)
         {
