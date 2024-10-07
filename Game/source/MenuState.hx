@@ -105,4 +105,6 @@ class MenuState extends FlxState
         // Start Game after selection of the Character Image and makes sure to include the player with the image path chossen
         FlxG.switchState(new PlayState(player));
     }
+
+ 
 }

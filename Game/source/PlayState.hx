@@ -7,6 +7,7 @@ import flixel.FlxSprite;
 import flixel.text.FlxText;
 import flixel.util.FlxTimer;
 import Asteriod.Asteroid;
+import flixel.ui.FlxButton;
 
 class PlayState extends FlxState
 {
@@ -17,6 +18,7 @@ class PlayState extends FlxState
     private var elapsedTime:Float = 0;
     private var projectileSpeed:Float = -200; 
     private var timerText:FlxText;
+    private var menuButton:FlxButton;
 
     public function new(player:Player)
     {
@@ -56,6 +58,9 @@ class PlayState extends FlxState
         timerText = new FlxText(0, 10, FlxG.width, "Time: 0");
         timerText.setFormat(null, 16, 0xFFFFFF, "center");
         add(timerText);
+
+        menuButton = new FlxButton(10, 10, "Menu", onMenu);
+        add(menuButton);
     }
 
     override public function update(elapsed:Float):Void
@@ -99,5 +104,10 @@ class PlayState extends FlxState
     {
         
         FlxG.switchState(new LoseState(elapsedTime));
+    }
+
+    private function onMenu():Void
+    {
+        FlxG.switchState(new MenuState());
     }
 }
