@@ -48,7 +48,7 @@ class MenuState extends FlxState
         add(startButton);
 
         // Add instruction labels for the users 
-        var instructions:FlxText = new FlxText(0, FlxG.height - 50, FlxG.width, "Use arrow keys or mouse to select a character and press Start");
+        var instructions:FlxText = new FlxText(0, FlxG.height - 50, FlxG.width, "Use arrow keys or mouse to select a character Then Press enter to start.\n Instructions: Press space to gain altitude and avoid the obstacles.");
         instructions.setFormat(null, 16, 0xFFFFFF, "center");
         add(instructions);
 
