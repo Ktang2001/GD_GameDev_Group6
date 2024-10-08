@@ -18,7 +18,11 @@ class PlayState extends FlxState
     private var elapsedTime:Float = 0;
     private var projectileSpeed:Float = -200; 
     private var timerText:FlxText;
+<<<<<<< Updated upstream
     private var menuButton:FlxButton;
+=======
+    private var menuButton:FlxButton; 
+>>>>>>> Stashed changes
 
     public function new(player:Player)
     {
@@ -58,7 +62,10 @@ class PlayState extends FlxState
         timerText = new FlxText(0, 10, FlxG.width, "Time: 0");
         timerText.setFormat(null, 16, 0xFFFFFF, "center");
         add(timerText);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         menuButton = new FlxButton(10, 10, "Menu", onMenu);
         add(menuButton);
     }
