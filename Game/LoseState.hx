@@ -25,12 +25,12 @@ class LoseState extends FlxState
         add(gameOverText);
 
         // Display time survived
-        var timeText:FlxText = new FlxText(0, FlxG.height / 2, FlxG.width, "Time Survived: " + Std.string(timeSurvived) + " seconds");
+        var timeText:FlxText = new FlxText(0, FlxG.height / 2, FlxG.width, "Time Survived: " + Std.string(timeSurvived) + " seconds\n Press the Menu Button to restart the game and beat your time.");
         timeText.setFormat(null, 16, 0xFFFFFF, "center");
         add(timeText);
 
         // Add a button to go back to the menu
-        var menuButton:FlxButton = new FlxButton(FlxG.width / 2 - 40, FlxG.height / 2 + 40, "Menu", onMenu);
+        var menuButton:FlxButton = new FlxButton(FlxG.width / 2 - 40, FlxG.height / 2 + 70, "Menu", onMenu);
         add(menuButton);
     }
 

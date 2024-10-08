@@ -20,6 +20,7 @@ class PlayState extends FlxState
     private var timerText:FlxText;
     private var menuButton:FlxButton;
 
+
     public function new(player:Player)
     {
         super();
@@ -58,7 +59,6 @@ class PlayState extends FlxState
         timerText = new FlxText(0, 10, FlxG.width, "Time: 0");
         timerText.setFormat(null, 16, 0xFFFFFF, "center");
         add(timerText);
-
         menuButton = new FlxButton(10, 10, "Menu", onMenu);
         add(menuButton);
     }
